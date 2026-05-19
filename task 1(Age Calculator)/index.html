@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Age Calculator</title>
+  <!-- Google Fonts: Playfair Display (display) + DM Sans (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Decorative background blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- Main card -->
+  <main class="card" role="main">
+
+    <!-- Header -->
+    <header class="card__header">
+      <div class="icon-ring" aria-hidden="true">⏳</div>
+      <h1 class="card__title">Age Calculator</h1>
+      <p class="card__subtitle" id="today-display">Today is <span id="current-date"></span></p>
+    </header>
+
+    <!-- Form -->
+    <section class="card__body">
+      <label class="field-label" for="dob">Date of Birth</label>
+      <div class="input-wrapper">
+        <input
+          type="date"
+          id="dob"
+          name="dob"
+          class="date-input"
+          aria-label="Date of Birth"
+        />
+      </div>
+
+      <button class="calc-btn" id="calcBtn" type="button">
+        <span class="btn-text">Calculate Age</span>
+        <span class="btn-arrow" aria-hidden="true">→</span>
+      </button>
+    </section>
+
+    <!-- Result section (hidden until calculated) -->
+    <section class="card__result" id="resultSection" aria-live="polite" hidden>
+      <div class="result-grid">
+        <div class="result-tile" id="tile-years">
+          <span class="result-number" id="res-years">0</span>
+          <span class="result-label">Years</span>
+        </div>
+        <div class="result-tile" id="tile-months">
+          <span class="result-number" id="res-months">0</span>
+          <span class="result-label">Months</span>
+        </div>
+        <div class="result-tile" id="tile-days">
+          <span class="result-number" id="res-days">0</span>
+          <span class="result-label">Days</span>
+        </div>
+      </div>
+      <p class="result-sentence" id="resultSentence"></p>
+    </section>
+
+    <!-- Error message -->
+    <p class="error-msg" id="errorMsg" role="alert" hidden></p>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
